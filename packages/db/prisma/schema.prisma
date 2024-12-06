@@ -19,10 +19,22 @@ enum Role {
   ADMIN
 }
 
+enum Status {
+  ACTIVE
+  INACTIVE
+}
+
 model Profile {
   id String @id @default(uuid())
   name String
   email String
   password String
   role Role
+}
+
+model LiveSeesion {
+  id String @unique
+  title String
+  startTime DateTime
+  status Status
 }
